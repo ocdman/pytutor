@@ -1,26 +1,33 @@
+# -*- coding: utf-8 -*-
 import scrapy
 import json
 import time
 
 from tutorial.items import XingshulinItem
-from scrapy.http import FormRequest
-
 from tutorial.settings import COOKIES
+from scrapy.http import FormRequest
 
 class XingshulinSpider(scrapy.Spider):
 	name = "xingshulin"
 	allowed_domains = ["xingshulin.com"]
 	global filename
 	filename = 'testVo.json'
+	global failurefile
+	failurefile = 'failure.txt'
 	# start_urls = [
 	# 	"http://www.xingshulin.com/searchTest.html"
 	# ]
 
 	def __init__(self):
 		self.cookies = COOKIES
+		#清空文件，如果没有文件则创建
+		f = open(filename, 'wb')
+		f.close()
+		ff = open(failurefile, 'wb')
+		ff.close()
 
 	def start_requests(self):
-		for i in range(2, 0, -1):
+		for i in range(10, 0, -1):
 			yield FormRequest("http://epocket.xingshulin.com/test/getTestDetail/{0}".format(i),
 				cookies=self.cookies,
 				callback=self.parse)
@@ -36,14 +43,17 @@ class XingshulinSpider(scrapy.Spider):
 		# 				callback=self.parse)
 
 	def parse(self, response):
-		# filename = 'testVo.json'
-		items = json.loads(response.body)
-		if items['obj'].has_key('testVo') == True:
-			with open(filename, 'a+') as f:
-				f.write(json.dumps(items['obj']['testVo']).decode('unicode-escape').encode('utf-8') + '\n')
-
-		# with open(filename, 'a+') as f:
-		# 	f.write(response.body + '\n')
+		if response.status == 200:
+			items = json.loads(response.body)
+			if items['obj'].has_key('testVo') == True:
+				with open(filename, 'a+') as f:
+					ids = '{id: ' + str(items['obj']['testVo']['id']) + '}, '
+					f.write(ids + json.dumps(items['obj']['testVo'], ensure_ascii=False).encode('utf-8') + '\n')
+					# f.write(json.dumps(items['obj']['testVo']).decode('unicode-escape').encode('utf-8') + '\n')
+		else:
+			#写入未爬取的url
+			with open(failurefile, 'a+') as ff:
+				ff.write(response.url + '\n')
 
 		# items = json.loads(response.body)
 		# xingshulinItem = XingshulinItem()
