@@ -39,7 +39,8 @@ class XingshulinItem(scrapy.Item):
 	relationTest = scrapy.Field()
 	#相关问题
 	relationQuestion = scrapy.Field()
-	
+	#患者准备
+	suffererPrepare = scrapy.Field()
 
 class DmozItem(scrapy.Item):
 	title = scrapy.Field()
