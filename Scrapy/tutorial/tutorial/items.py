@@ -7,7 +7,7 @@
 
 import scrapy
 
-class XingshulinItem(scrapy.Item):
+class XingshulinTestItem(scrapy.Item):
 	id = scrapy.Field()
 	#中文名
 	cname = scrapy.Field()
@@ -41,8 +41,39 @@ class XingshulinItem(scrapy.Item):
 	relationQuestion = scrapy.Field()
 	#患者准备
 	suffererPrepare = scrapy.Field()
+	#样本收集
+	swatchGather = scrapy.Field()
 
 class DmozItem(scrapy.Item):
 	title = scrapy.Field()
 	link = scrapy.Field()
 	desc = scrapy.Field()
+
+class XingshulinGuideItem(scrapy.Item):
+	id = scrapy.Field()
+	#指南名
+	guideName = scrapy.Field()
+	#发表年
+	year = scrapy.Field()
+	#组织
+	organization = scrapy.Field()
+	#简介
+	summary = scrapy.Field()
+	#发表日期
+	publishedDate = scrapy.Field()
+	#pdf链接
+	pdfLink = scrapy.Field()
+	#epub链接
+	epubLink = scrapy.Field()
+	#杂志
+	journal = scrapy.Field()
+	#作者
+	author = scrapy.Field()
+	#量
+	volume = scrapy.Field()
+	#期号
+	issue = scrapy.Field()
+	#下载次数
+	downloadCount = scrapy.Field()
+
+
