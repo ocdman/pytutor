@@ -76,4 +76,23 @@ class XingshulinGuideItem(scrapy.Item):
 	#下载次数
 	downloadCount = scrapy.Field()
 
+class WanfangExaminationItem(scrapy.Item):
+	ID = scrapy.Field()
+	RecordType = scrapy.Field()
+	Name = scrapy.Field()
+	NameInfo = scrapy.Field()
+	Summarize = scrapy.Field()
+	Indication = scrapy.Field()
+	Reference = scrapy.Field()
+	Clinical = scrapy.Field()
+	Samples = scrapy.Field()
+	Precautions = scrapy.Field()
+	Category = scrapy.Field()
+	Initial = scrapy.Field()
+	ArticleCount = scrapy.Field()
+	CategoryShort = scrapy.Field()
+	CategoryRoot = scrapy.Field()
+	Author = scrapy.Field()
+	Checker = scrapy.Field()
+		
 

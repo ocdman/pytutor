@@ -14,11 +14,12 @@ from tutorial.items import *
 class TutorialPipeline(object):
 
 	def __init__(self):
-		self.lock = threading.Lock()
 		print "start pymssql connect"
 		#数据库配置
-		self.conn = pymssql.connect(server='192.168.6.169', user='sa', password='Password01!', database='clinKnowledge1')
+		self.conn = pymssql.connect(server='192.168.118.116', user='sa', password='Password01!', database='clinKnowledge1')
 		self.cursor = self.conn.cursor()
+		#加入锁
+		self.lock = threading.Lock()
 
 	def process_item(self, item, spider):
 		if isinstance(item, XingshulinTestItem):
@@ -29,6 +30,11 @@ class TutorialPipeline(object):
 		elif isinstance(item, XingshulinGuideItem):
 			self.lock.acquire()
 			self.cursor.execute("insert into guides(id, guideName, year, organization, summary, publishedDate, pdfLink, epubLink, journal, author, volume, issue) values ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})".format(item['id'], item['guideName'], item['year'], item['organization'], item['summary'], item['publishedDate'], item['pdfLink'], item['epubLink'], item['journal'], item['author'], item['volume'], item['issue']))
+			self.conn.commit()
+			self.lock.release()
+		elif isinstance(item, WanfangExaminationItem):
+			self.lock.acquire()
+			self.cursor.execute("insert into wanfangexaminations(id, recordtype, name, nameinfo, summarize, indication, reference, clinical, samples, precautions, category, initial, articlecount, categoryshort, categoryroot, author, checker) values ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9}, {10}, {11}, {12}, {13}, {14}, {15}, {16})".format(item['ID'], item['RecordType'], item['Name'], item['NameInfo'], item['Summarize'], item['Indication'], item['Reference'], item['Clinical'], item['Samples'], item['Precautions'], item['Category'], item['Initial'], item['ArticleCount'], item['CategoryShort'], item['CategoryRoot'], item['Author'], item['Checker']))
 			self.conn.commit()
 			self.lock.release()
         # return item
