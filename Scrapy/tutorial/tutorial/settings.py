@@ -104,3 +104,13 @@ WANFANG_COOKIES = {
 #HTTPCACHE_DIR='httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+#日志设置
+# LOG_FILE = 'logging.txt'
+# LOG_LEVEL = 'WARNING'
+
+#数据库相关
+CUST_SERVER = '192.168.2.122'
+CUST_USER = 'sa'
+CUST_PWD = 'Password01!'
+CUST_DB = 'clinKnowledge1'

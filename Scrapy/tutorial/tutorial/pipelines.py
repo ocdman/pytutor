@@ -10,13 +10,14 @@ import json
 import threading
 
 from tutorial.items import *
+from tutorial.settings import *
 
 class TutorialPipeline(object):
 
 	def __init__(self):
 		print "start pymssql connect"
 		#数据库配置
-		self.conn = pymssql.connect(server='192.168.118.116', user='sa', password='Password01!', database='clinKnowledge1')
+		self.conn = pymssql.connect(server=CUST_SERVER, user=CUST_USER, password=CUST_PWD, database=CUST_DB)
 		self.cursor = self.conn.cursor()
 		#加入锁
 		self.lock = threading.Lock()
@@ -34,7 +35,7 @@ class TutorialPipeline(object):
 			self.lock.release()
 		elif isinstance(item, WanfangExaminationItem):
 			self.lock.acquire()
-			self.cursor.execute("insert into wanfangexaminations(id, recordtype, name, nameinfo, summarize, indication, reference, clinical, samples, precautions, category, initial, articlecount, categoryshort, categoryroot, author, checker) values ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9}, {10}, {11}, {12}, {13}, {14}, {15}, {16})".format(item['ID'], item['RecordType'], item['Name'], item['NameInfo'], item['Summarize'], item['Indication'], item['Reference'], item['Clinical'], item['Samples'], item['Precautions'], item['Category'], item['Initial'], item['ArticleCount'], item['CategoryShort'], item['CategoryRoot'], item['Author'], item['Checker']))
+			self.cursor.execute("insert into wanfangexaminations(id, recordtype, cname, ename, nameinfo, summarize, indication, reference, clinical, samples, precautions, category, initial, articlecount, categoryshort, categoryroot, author, checker) values ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17})".format(item['ID'], item['RecordType'], item['CName'], item['EName'], item['NameInfo'], item['Summarize'], item['Indication'], item['Reference'], item['Clinical'], item['Samples'], item['Precautions'], item['Category'], item['Initial'], item['ArticleCount'], item['CategoryShort'], item['CategoryRoot'], item['Author'], item['Checker']))
 			self.conn.commit()
 			self.lock.release()
         # return item

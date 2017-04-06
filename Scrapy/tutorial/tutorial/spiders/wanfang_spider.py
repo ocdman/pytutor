@@ -15,12 +15,12 @@ logging.basicConfig(
 	filename='logging.txt',
 	filemode = 'wb',
 	format='%(asctime)s [%(name)s] %(levelname)s: %(message)s',
-	level=logging.ERROR
+	level=logging.WARNING	#level not work
 )
 
 class WanfangSpider(scrapy.Spider):
 	name = "wanfang"
-	allowed_domains = ["lczl.med.wanfangdata.com.cn"]
+	# allowed_domains = ["lczl.med.wanfangdata.com.cn"]
 	# start_urls = ['http://lczl.med.wanfangdata.com.cn']
 
 	def __init__(self):
@@ -38,17 +38,19 @@ class WanfangSpider(scrapy.Spider):
 		# 		formdata={'id': '{0}'.format(i), 'category': 'Examination', 'type': 'Examination', 'initial': '0', 'page': '0', 'pageSize': '48'},
 		# 		callback=self.parse)
 
-		request = FormRequest("http://lczl.med.wanfangdata.com.cn/Home/SearchTotal",
-			cookies=self.cookies,
-			formdata={'initial': '0', 'category': 'Examination', 'id': '62'},
-			callback=self.parseTotal)
-		request.meta['id'] = '62'
-		yield request
+		for i in range(62, 67, 1):
+			request = FormRequest("http://lczl.med.wanfangdata.com.cn/Home/SearchTotal",
+				cookies=self.cookies,
+				formdata={'initial': '0', 'category': 'Examination', 'id': str(i)},
+				callback=self.parseTotal)
+			request.meta['id'] = str(i)
+			yield request
 
 	#步骤一：先根据id号解析条数
 	def parseTotal(self, response):
 		id = response.meta['id']
 		pageSize = response.body
+		logging.info('id:' + id + ', pageSize:' + pageSize)
 		yield FormRequest("http://lczl.med.wanfangdata.com.cn/Home/SearchResultList",
 			cookies=self.cookies,
 			formdata={'type':'Examination', 'initial': '0', 'category': 'Examination', 'id': id, 'page': '0', 'pageSize': pageSize},
@@ -86,15 +88,20 @@ class WanfangSpider(scrapy.Spider):
 							examItem['ArticleCount'] = "'" + items['ArticleCount'].encode('utf-8').replace("'","''") + "'" if 'ArticleCount' in items else 'NULL'
 							examItem['CategoryShort'] = "'" + items['CategoryShort'].encode('utf-8') .replace("'","''")+ "'" if 'CategoryShort' in items else 'NULL'
 							examItem['CategoryRoot'] = "'" + items['CategoryRoot'].encode('utf-8').replace("'","''") + "'" if 'CategoryRoot' in items else 'NULL'
-							examItem['Name'] = "'" + '|'.join(x.encode('utf-8').replace("'","''") for x in items['Name']) + "'" if 'Name' in items and isinstance(items['Name'], list) else 'NULL'
+							
+							# examItem['Name'] = "'" + '|'.join(x.encode('utf-8').replace("'","''") for x in items['Name']) + "'" if 'Name' in items and isinstance(items['Name'], list) else 'NULL'
+							#将Name拆分成中英文
+							examItem['CName'] = "'" + items['Name'][0].encode('utf-8').replace("'","''") + "'" if 'Name' in items else 'NULL'
+							examItem['EName'] = "'" + items['Name'][1].encode('utf-8').replace("'","''") + "'" if 'Name' in items else 'NULL'
+							
 							examItem['NameInfo'] = "'" + '|'.join(x.encode('utf-8').replace("'","''") for x in items['NameInfo']) + "'" if 'NameInfo' in items and isinstance(items['NameInfo'], list) else 'NULL'
 							examItem['Category'] = "'" + ','.join(x.encode('utf-8').replace("'","''") for x in items['Category']) + "'" if 'Category' in items and isinstance(items['Category'], list) else 'NULL'
 							examItem['Author'] = "'" + ','.join(x.encode('utf-8').replace("'","''") for x in items['Author']) + "'" if 'Author' in items and isinstance(items['Author'], list) else 'NULL'
 							examItem['Checker'] = "'" + ','.join(x.encode('utf-8').replace("'","''") for x in items['Checker']) + "'" if 'Checker' in items and isinstance(items['Checker'], list) else 'NULL'
-							for key in items:
-								if key not in examItem and key != '__RecordType__':
-									#写入遗漏的字段
-									logging.warning('遗漏字段: ' + str(key) + '\n')
+							# for key in items:
+							# 	if key not in examItem and key != '__RecordType__':
+							# 		#写入遗漏的字段
+							# 		logging.warning('遗漏字段: ' + str(key) + '\n')
 							return examItem
 			except Exception, ex:
 				#写入异常捕获

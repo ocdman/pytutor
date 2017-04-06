@@ -79,7 +79,8 @@ class XingshulinGuideItem(scrapy.Item):
 class WanfangExaminationItem(scrapy.Item):
 	ID = scrapy.Field()
 	RecordType = scrapy.Field()
-	Name = scrapy.Field()
+	CName = scrapy.Field()
+	EName = scrapy.Field()
 	NameInfo = scrapy.Field()
 	Summarize = scrapy.Field()
 	Indication = scrapy.Field()
