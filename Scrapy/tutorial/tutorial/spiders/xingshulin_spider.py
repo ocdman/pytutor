@@ -51,7 +51,8 @@ class XingshulinSpider(scrapy.Spider):
 		# 		callback=self.parseChineseMedicine)
 
 		#中成药
-		for i in range(200000, 0, -1):
+		# for i in range(200000, 0, -1):
+		for i in range(66600, 66598, -1):
 			yield FormRequest("http://epocket.xingshulin.com/drug/getDrugDetail/{0}/1".format(i),
 				cookies=self.cookies,
 				callback=self.parseDrug)
@@ -214,7 +215,7 @@ class XingshulinSpider(scrapy.Spider):
 						drugItem['fda'] = "'" + items['fda'].encode('utf-8').replace("'","''") + "'" if 'fda' in items else 'NULL'
 						drugItem['lactationDrug'] = "'" + items['lactationDrug'].encode('utf-8').replace("'","''") + "'" if 'lactationDrug' in items else 'NULL'
 						drugItem['medicineTakingFeeding'] = "'" + items['medicineTakingFeeding'].encode('utf-8').replace("'","''") + "'" if 'medicineTakingFeeding' in items else 'NULL'
-						
+
 						drugItem['athleticDoping'] = items['athleticDoping'] if 'athleticDoping' in items else 'NULL'
 						drugItem['insuranceType'] = items['insuranceType'] if 'insuranceType' in items else 'NULL'
 						drugItem['otcType'] = items['otcType'] if 'otcType' in items else 'NULL'
