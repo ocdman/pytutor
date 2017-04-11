@@ -107,10 +107,10 @@ WANFANG_COOKIES = {
 
 #日志设置
 # LOG_FILE = 'logging.txt'
-# LOG_LEVEL = 'WARNING'
+# LOG_LEVEL = 'DEBUG'
 
 #数据库相关
-CUST_SERVER = '192.168.2.122'
+CUST_SERVER = '192.168.118.138'
 CUST_USER = 'sa'
 CUST_PWD = 'Password01!'
 CUST_DB = 'clinKnowledge1'
