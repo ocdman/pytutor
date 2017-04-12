@@ -7,7 +7,7 @@
 
 import scrapy
 
-#杏树林-检查类
+#杏树林-检查 & 检验类
 class XingshulinTestItem(scrapy.Item):
 	id = scrapy.Field()
 	#中文名
@@ -120,17 +120,19 @@ class XingshulinChineseMedicineItem(scrapy.Item):
 	#参考文献
 	references = scrapy.Field()
 
-#杏树林-中成药类
+#杏树林-西药 & 中成药类
 class XingshulinDrugItem(scrapy.Item):
 	id = scrapy.Field()
-	#中成药名称
+	#药名
 	commonName = scrapy.Field()
-	#中成药英文名称
+	#药英文名
 	englishCommonName = scrapy.Field()
 	#商品名称
 	tradeName = scrapy.Field()
 	#商品英文名称
 	englishTradeName = scrapy.Field()
+	#别名
+	aliasName = scrapy.Field()
 	#商品标记
 	tradeMark = scrapy.Field()
 	#主要成分
@@ -159,7 +161,7 @@ class XingshulinDrugItem(scrapy.Item):
 	period = scrapy.Field()
 	#老年用药
 	geriatricUse = scrapy.Field()
-	#药物代谢动力学
+	#药代动力学
 	pharmacokinetics = scrapy.Field()
 	#孕妇及哺乳期妇女用药
 	pregnantLactatingUse = scrapy.Field()
@@ -177,8 +179,9 @@ class XingshulinDrugItem(scrapy.Item):
 	clinicalTrials = scrapy.Field()
 	#警告
 	warning = scrapy.Field()
-
+	#修改时间
 	modifyDate = scrapy.Field()
+
 	fda = scrapy.Field()
 	lactationDrug = scrapy.Field()
 	medicineTakingFeeding = scrapy.Field()
@@ -186,6 +189,7 @@ class XingshulinDrugItem(scrapy.Item):
 	athleticDoping = scrapy.Field()
 	insuranceType = scrapy.Field()
 	otcType = scrapy.Field()
+	#类型(1为西药,2为中成药)
 	type = scrapy.Field()
 	isBasic = scrapy.Field()
 
@@ -194,6 +198,42 @@ class XingshulinDrugItem(scrapy.Item):
 	#包装
 	packages = scrapy.Field()
 	importCode = scrapy.Field()
+
+#杏树林-方剂类
+class XingshulinPrescriptionItem(scrapy.Item):
+	id = scrapy.Field()
+	#名称
+	name = scrapy.Field()
+	#别名
+	aliasName = scrapy.Field()
+	#使用注意
+	cautions = scrapy.Field()
+	#制方详解
+	elucldation = scrapy.Field()
+	#功效
+	function = scrapy.Field()
+	#主治
+	indication = scrapy.Field()
+	#组成
+	ingredient = scrapy.Field()
+	#辨证要点
+	keySymptom = scrapy.Field()
+	#现代运用
+	modernApplication = scrapy.Field()
+	#现代研究
+	modernResearch = scrapy.Field()
+	#临证加减
+	modification = scrapy.Field()
+	#原书记载
+	originalRecord = scrapy.Field()
+	#各家方论
+	selectedRecord = scrapy.Field()
+	#方源
+	source = scrapy.Field()
+	#用法
+	usage = scrapy.Field()
+	#歌诀
+	verse = scrapy.Field()
 
 #万方-检验类
 class WanfangExaminationItem(scrapy.Item):

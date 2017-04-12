@@ -40,6 +40,10 @@ class MyCustomDownloaderMiddleware(object):
 		self.recover_no_proxy_interval = 20
 		# 表示可信的代理的数量（如自己搭建的http代理）
 		self.fixed_proxy = len(self.proxyes)
+		# 当有效代理小于这个数时（包括无代理），从网上抓取新的代理，可以将这个数设为为了满足每个ip被要求输入验证码后得到足够休息时间所需要的代理数
+		# 例如爬虫在十个可用代理之间切换时，每个ip经过数分钟才轮到自己一次，这样就能get一些请求而不用输入验证码了
+		# 如果这个数过小，例如两个，爬虫用A ip爬了没几个就被禁，换了一个又爬了次又被禁，这样整个爬虫就会处于一种忙等待的状态，影响效率
+		self.extend_proxy_threshold = 10
 		# 从文件读取初始代理
 		if os.path.exists(self.proxy_file):
 			with open(self.proxy_file, 'r') as fd:
@@ -61,9 +65,50 @@ class MyCustomDownloaderMiddleware(object):
 				return True
 		return False
 
-	# def invalid_proxy(self, index):
-		#可信代理
-		# if index < self.fixed_proxy:
+	'''
+	返回代理列表中有效的代理数量
+	'''
+	def len_valid_proxy(self):
+		count = 0
+		for p in self.proxyes:
+			if p['valid']:
+				count += 1
+		return count
+
+	'''
+	将所有count >= 指定阈值的代理重置为valid
+	'''
+	def reset_proxyes(self):
+		logging.info('reset proxyes to valid')
+
+	'''
+	将index指向的代理设置为invalid
+	并调整当前的proxy_index到下一个有效代理的位置
+	'''
+	def invalid_proxy(self, index):
+		#可信代理永远不会为invalid
+		if index < self.fixed_proxy:
+			self.inc_proxy_index()
+			return
+
+		if self.proxyes[index]['valid']:
+			logging.info('invalidate %s' % self.proxyes[index])
+			self.proxyes[index]['valid'] = False
+
+	'''
+	将代理列表的索引移到下一个有效代理的位置
+	如果发现代理列表只有fixed_proxy项有效，重置代理列表
+	'''
+	def inc_proxy_index(self):
+		assert self.proxyes[0]['valid']
+		while True:
+			self.proxy_index = (self.proxy_index + 1) % len(self.proxyes)
+			if self.proxyes[self.proxy_index]['valid']:
+				break
+
+		#如果代理列表中有效的代理不足的话
+		if self.len_valid_proxy() <= self.fixed_proxy or self.len_valid_proxy() < self.extend_proxy_threshold:
+			self.reset_proxyes()
 
 	'''
 	将request设置使用当前的或下一个有效的代理
@@ -100,9 +145,11 @@ class MyCustomDownloaderMiddleware(object):
 
 		request.meta['dont_redirect'] = True # 有些代理会把请求重定向到一个莫名的地址
 
+		# spider发现ip被禁,要求更换代理(change_proxy在具体的spider里设置,因为不同网站ip被禁response不同)
 		if 'change_proxy'in request.meta.keys() and request.meta['change_proxy']:
 			logging.info('change proxy request get by spider: %s' % request)
-			# self.invalid_proxy(request.meta['proxy_index'])
+			self.invalid_proxy(request.meta['proxy_index'])
+			request.meta['change_proxy'] = False
 
 		logging.info(request.meta.keys())
 

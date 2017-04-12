@@ -30,9 +30,7 @@ class XingshulinSpider(scrapy.Spider):
 		self.cookies = COOKIES
 
 	def start_requests(self):
-		#检验
-		#改动范围,用来测试
-		#for i in range(2, 0, -1):
+		#检查 & 检验
 		# for i in range(4800, 0, -1):
 		# 	yield FormRequest("http://epocket.xingshulin.com/test/getTestDetail/{0}".format(i),
 		# 		cookies=self.cookies,
@@ -50,24 +48,22 @@ class XingshulinSpider(scrapy.Spider):
 		# 		cookies=self.cookies,
 		# 		callback=self.parseChineseMedicine)
 
-		#中成药
-		# for i in range(200000, 0, -1):
-		for i in range(66600, 66598, -1):
-			yield FormRequest("http://epocket.xingshulin.com/drug/getDrugDetail/{0}/1".format(i),
+		#西药 & 中成药
+		# for i in range(190000, 0, -1):
+		# 	yield FormRequest("http://epocket.xingshulin.com/drug/getDrugDetail/{0}/1".format(i),
+		# 		cookies=self.cookies,
+		# 		callback=self.parseDrug)
+
+		#方剂
+		for i in range(1000, 0, -1):
+			yield FormRequest("http://epocket.xingshulin.com/prescription/getPrescriptionDetail/{0}/3".format(i),
 				cookies=self.cookies,
-				callback=self.parseDrug)
+				callback=self.parsePrescription)
 
-		# for i in range(4712, 0, -2):
-		# 	yield FormRequest("http://www.xingshulin.com/TestAction.do?processID=get&id={0}".format(i),
-		# 				formdata={'processID': 'get', 'id': '{0}'.format(i)},
-		# 				callback=self.parse)
 
-		# for i in range(1, 31):
-		# 	yield FormRequest("http://www.xingshulin.com/QueryAction.do?processID=getResult&pageno={0}&catalog=%E6%A3%80%E9%AA%8C&timeRange=&classTags=&insurancetype=&periodical=&queryStr=*".format(i),
-		# 				formdata={'processID': 'getResult', 'pageno': '{0}'.format(i), 'catalog': '%E6%A3%80%E9%AA%8C', 'timeRange': '', 'classTags': '', 'insurancetype': '', 'periodical': '', 'queryStr': '*'},
-		# 				callback=self.parse)
-
-	#解析检验
+	'''
+	解析检查 & 检验
+	'''
 	def parseTest(self, response):
 		if response.status == 200:
 			details = json.loads(response.body)
@@ -94,7 +90,6 @@ class XingshulinSpider(scrapy.Spider):
 						testItem['relationQuestion'] = "'" + items['relationQuestion'].encode('utf-8').replace("'","''") + "'" if 'relationQuestion' in items else 'NULL'
 						testItem['suffererPrepare'] = "'" + items['suffererPrepare'].encode('utf-8').replace("'","''") + "'" if 'suffererPrepare' in items else 'NULL'
 						testItem['swatchGather'] = "'" + items['swatchGather'].encode('utf-8').replace("'","''") + "'" if 'swatchGather' in items else 'NULL'
-						#这段可以省略了
 						# for key in items:
 						# 	if key not in testItem:
 						# 		logging.warning('遗漏字段: ' + str(key) + ', Id:' + str(items['id']) + '\n')
@@ -104,7 +99,9 @@ class XingshulinSpider(scrapy.Spider):
 		elif response.status == 404:
 			logging.warning('未爬取的url: ' + str(response.url) + '\n')
 
-	#解析指南
+	'''
+	解析指南
+	'''
 	def parseGuide(self, response):
 		if response.status == 200:
 			details = json.loads(response.body)
@@ -135,7 +132,9 @@ class XingshulinSpider(scrapy.Spider):
 		elif response.status == 404:
 			logging.warning('未爬取的url: ' + str(response.url) + '\n')
 
-	#解析中药
+	'''
+	解析中药
+	'''
 	def parseChineseMedicine(self, response):
 		if response.status == 200:
 			details = json.loads(response.body)
@@ -173,7 +172,9 @@ class XingshulinSpider(scrapy.Spider):
 		elif response.status:
 			logging.warning('未爬取的url: ' + str(response.url) + '\n')
 
-	#解析中药
+	'''
+	解析西药&中成药
+	'''
 	def parseDrug(self, response):
 		if response.status == 200:
 			logging.info(response.body)
@@ -188,6 +189,7 @@ class XingshulinSpider(scrapy.Spider):
 						drugItem['englishCommonName'] = "'" + items['englishCommonName'].encode('utf-8').replace("'","''") + "'" if 'englishCommonName' in items else 'NULL'
 						drugItem['tradeName'] = "'" + items['tradeName'].encode('utf-8').replace("'","''") + "'" if 'tradeName' in items else 'NULL'
 						drugItem['englishTradeName'] = "'" + items['englishTradeName'].encode('utf-8').replace("'","''") + "'" if 'englishTradeName' in items else 'NULL'
+						drugItem['aliasName'] = "'" + items['aliasName'].encode('utf-8').replace("'","''") + "'" if 'aliasName' in items else 'NULL'
 						drugItem['tradeMark'] = "'" + items['tradeMark'].encode('utf-8').replace("'","''") + "'" if 'tradeMark' in items else 'NULL'
 						drugItem['mainIngredient'] = "'" + items['mainIngredient'].encode('utf-8').replace("'","''") + "'" if 'mainIngredient' in items else 'NULL'
 						drugItem['description'] = "'" + items['description'].encode('utf-8').replace("'","''") + "'" if 'description' in items else 'NULL'
@@ -248,4 +250,42 @@ class XingshulinSpider(scrapy.Spider):
 			except Exception, ex:
 				logging.error('异常捕获: ' + str(ex) + '\n')
 		elif response.status:
-			logging.warning('未爬取的url: ' + str(response.url) + '\n')				
+			logging.warning('未爬取的url: ' + str(response.url) + '\n')
+	
+	'''
+	解析方剂
+	'''
+	def parsePrescription(self, response):
+		if response.status == 200:
+			logging.info(response.body)
+			details = json.loads(response.body)
+			prescriptionItem = XingshulinPrescriptionItem()
+			try:
+				if details['obj'].has_key('prescriptionVo') == True:
+					items = details['obj']['prescriptionVo']
+					if 'id' in items:
+						prescriptionItem['id'] = items['id']
+						prescriptionItem['name'] = "'" + items['name'].encode('utf-8').replace("'","''") + "'" if 'name' in items else 'NULL'
+						prescriptionItem['aliasName'] = "'" + items['aliasName'].encode('utf-8').replace("'","''") + "'" if 'aliasName' in items else 'NULL'
+						prescriptionItem['cautions'] = "'" + items['cautions'].encode('utf-8').replace("'","''") + "'" if 'cautions' in items else 'NULL'
+						prescriptionItem['elucldation'] = "'" + items['elucldation'].encode('utf-8').replace("'","''") + "'" if 'elucldation' in items else 'NULL'
+						prescriptionItem['function'] = "'" + items['function'].encode('utf-8').replace("'","''") + "'" if 'function' in items else 'NULL'
+						prescriptionItem['indication'] = "'" + items['indication'].encode('utf-8').replace("'","''") + "'" if 'indication' in items else 'NULL'
+						prescriptionItem['ingredient'] = "'" + items['ingredient'].encode('utf-8').replace("'","''") + "'" if 'ingredient' in items else 'NULL'
+						prescriptionItem['keySymptom'] = "'" + items['keySymptom'].encode('utf-8').replace("'","''") + "'" if 'keySymptom' in items else 'NULL'
+						prescriptionItem['modernApplication'] = "'" + items['modernApplication'].encode('utf-8').replace("'","''") + "'" if 'modernApplication' in items else 'NULL'
+						prescriptionItem['modernResearch'] = "'" + items['modernResearch'].encode('utf-8').replace("'","''") + "'" if 'modernResearch' in items else 'NULL'
+						prescriptionItem['modification'] = "'" + items['modification'].encode('utf-8').replace("'","''") + "'" if 'modification' in items else 'NULL'
+						prescriptionItem['originalRecord'] = "'" + items['originalRecord'].encode('utf-8').replace("'","''") + "'" if 'originalRecord' in items else 'NULL'
+						prescriptionItem['selectedRecord'] = "'" + items['selectedRecord'].encode('utf-8').replace("'","''") + "'" if 'selectedRecord' in items else 'NULL'
+						prescriptionItem['source'] = "'" + items['source'].encode('utf-8').replace("'","''") + "'" if 'source' in items else 'NULL'
+						prescriptionItem['usage'] = "'" + items['usage'].encode('utf-8').replace("'","''") + "'" if 'usage' in items else 'NULL'
+						prescriptionItem['verse'] = "'" + items['verse'].encode('utf-8').replace("'","''") + "'" if 'verse' in items else 'NULL'
+						for key in items:
+							if key not in prescriptionItem and key != 'prescriptionId':
+								logging.warning('遗漏字段: ' + str(key) + ', Id:' + str(items['id']) + '\n')
+						return prescriptionItem
+			except Exception, ex:
+				logging.error('异常捕获: ' + str(ex) + '\n')
+		elif response.status:
+			logging.warning('未爬取的url: ' + str(response.url) + '\n')

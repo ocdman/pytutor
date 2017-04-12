@@ -27,17 +27,7 @@ class WanfangSpider(scrapy.Spider):
 		self.cookies = WANFANG_COOKIES
 
 	def start_requests(self):
-		# for i in range(62, 67, 1):
-		# 	referer = "http://lczl.med.wanfangdata.com.cn/Examination/List/Examination/{0}".format(i)
-		# 	print 'referer: ' + referer
-		# 	yield FormRequest("http://lczl.med.wanfangdata.com.cn/Home/SearchResultList",
-		# 		headers={
-		# 			'Referer': referer
-		# 		},
-		# 		cookies=self.cookies,
-		# 		formdata={'id': '{0}'.format(i), 'category': 'Examination', 'type': 'Examination', 'initial': '0', 'page': '0', 'pageSize': '48'},
-		# 		callback=self.parse)
-
+		#检验
 		for i in range(62, 67, 1):
 			request = FormRequest("http://lczl.med.wanfangdata.com.cn/Home/SearchTotal",
 				cookies=self.cookies,
