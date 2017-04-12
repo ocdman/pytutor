@@ -71,7 +71,7 @@ WANFANG_COOKIES = {
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   # 'tutorial.middlewares.MyCustomDownloaderMiddleware': 543,
+   'tutorial.middlewares.MyCustomDownloaderMiddleware': 543,
 }
 
 # Enable or disable extensions

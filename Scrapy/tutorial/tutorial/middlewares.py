@@ -44,6 +44,11 @@ class MyCustomDownloaderMiddleware(object):
 		# 例如爬虫在十个可用代理之间切换时，每个ip经过数分钟才轮到自己一次，这样就能get一些请求而不用输入验证码了
 		# 如果这个数过小，例如两个，爬虫用A ip爬了没几个就被禁，换了一个又爬了次又被禁，这样整个爬虫就会处于一种忙等待的状态，影响效率
 		self.extend_proxy_threshold = 10
+		# 一个代理如果没用到这个数字就被发现老是超时，则永久移除该代理。
+		# 设置为0则不会修改代理文件
+		self.dump_count_threshold = 20
+		# 上一次抓新代理的时间
+		self.last_fetch_proxy_time = datetime.now()
 		# 从文件读取初始代理
 		if os.path.exists(self.proxy_file):
 			with open(self.proxy_file, 'r') as fd:
@@ -80,13 +85,37 @@ class MyCustomDownloaderMiddleware(object):
 	'''
 	def reset_proxyes(self):
 		logging.info('reset proxyes to valid')
+		for p in self.proxyes:
+			if p['count'] >= self.dump_count_threshold:
+				p['valid'] = True
+
+	'''
+	从网上抓取新的代理添加到代理列表里
+	'''
+	def fetch_new_proxyes(self):
+		logging.info('extending proxyes using fetch_new_proxyes.py')
+		new_proxyes = fetch_free_proxyes.fetch_xici()
+		logging.info('new proxyes: %s' % new_proxyes)
+		self.last_fetch_proxy_time = datetime.now()
+
+		for np in new_proxyes:
+			if self.url_in_proxyes('http://' + np):
+				continue
+			else:
+				self.proxyes.append({'proxy': 'http://' + np,
+					'valid': True,
+					'count': 0})
+
+		# 如果发现抓不到新的代理了，缩小阈值以避免白费功夫
+		if self.len_valid_proxy() < self.extend_proxy_threshold:
+			self.extend_proxy_threshold -= 1
 
 	'''
 	将index指向的代理设置为invalid
 	并调整当前的proxy_index到下一个有效代理的位置
 	'''
 	def invalid_proxy(self, index):
-		#可信代理永远不会为invalid
+		# 可信代理永远不会为invalid
 		if index < self.fixed_proxy:
 			self.inc_proxy_index()
 			return
@@ -106,9 +135,14 @@ class MyCustomDownloaderMiddleware(object):
 			if self.proxyes[self.proxy_index]['valid']:
 				break
 
-		#如果代理列表中有效的代理不足的话
+		# 如果代理列表中有效的代理不足的话
 		if self.len_valid_proxy() <= self.fixed_proxy or self.len_valid_proxy() < self.extend_proxy_threshold:
 			self.reset_proxyes()
+
+		# 代理数量仍然不足，抓取新的代理
+		if self.len_valid_proxy() <= self.extend_proxy_threshold:
+			logging.info('valid proxy < threshold: %d/%d' % (self.len_valid_proxy(), self.extend_proxy_threshold))
+			self.fetch_new_proxyes()
 
 	'''
 	将request设置使用当前的或下一个有效的代理
