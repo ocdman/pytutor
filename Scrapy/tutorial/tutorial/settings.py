@@ -17,7 +17,7 @@ DEFAULT_REQUEST_HEADERS = {
 	# 'Referer': "http://www.xingshulin.com/searchTest.html"
 }
 ITEM_PIPELINES = {
-   'tutorial.pipelines.TutorialPipeline': 300,
+   # 'tutorial.pipelines.TutorialPipeline': 300,
 }
 
 
@@ -30,7 +30,8 @@ ITEM_PIPELINES = {
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY=3
+DOWNLOAD_DELAY=3
+## DOWNLOAD_TIMEOUT=10
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN=16
 #CONCURRENT_REQUESTS_PER_IP=16
@@ -52,6 +53,16 @@ WANFANG_COOKIES = {
 	'WFKS.Auth': '%7b%22Context%22%3a%7b%22AccountIds%22%3a%5b%5d%2c%22Data%22%3a%5b%5d%2c%22SessionId%22%3a%224dc682a1-436f-4e87-9501-90f93dc4c2f0%22%2c%22Sign%22%3a%22hi+authserv%22%7d%2c%22LastUpdate%22%3a%222017-04-01T02%3a39%3a15Z%22%2c%22TicketSign%22%3a%22ucqLvG96FdQJnf%5c%2fLP5eCFA%3d%3d%22%7d',
 	'WFMed.Auth': '%7b%22Context%22%3a%7b%22AccountIds%22%3a%5b%22MedPerson.chilihotpot%22%5d%2c%22Data%22%3a%5b%7b%22Key%22%3a%22MedPerson.chilihotpot.DisplayName%22%2c%22Value%22%3a%22%22%7d%5d%2c%22SessionId%22%3a%22485a62c6-c64f-48e6-8c8a-a9685e696af1%22%2c%22Sign%22%3a%22RD6CdZMNAqICZXw41MLynKZoqxeoC7qxMdR6QLZuN2YrgxyZ0fDFU8ZSmR3u1307%22%7d%2c%22LastUpdate%22%3a%222017-04-01T06%3a54%3a45Z%22%2c%22TicketSign%22%3a%222fDjPsfPOzNVSHSamC4X3g%3d%3d%22%7d'
 }
+XUEQIU_COOKIES = {
+	'aliyungf_tc': 'AQAAAKsLZwTbJg0Ap3ZRZSG5MJ23v/Np',
+	'xq_a_token': 'ca292f8d934efc28f3fd052b7dcf46f14a20a0d3',
+	'xq_a_token.sig': 'OfkwBmKBwnYETfT5NOuElwVwhBY',
+	'xq_r_token': 'd1accc7b0cafd743be1b975a863a146e514d9c80',
+	'xq_r_token.sig': 'LV5APomGXuF1PJGnH9SmAPdxYHc',
+	'u': '771492072769082',
+	'Hm_lvt_1db88642e346389874251b5a1eded6e3': '1492061072,1492062559,1492070685,1492071572',
+	'Hm_lpvt_1db88642e346389874251b5a1eded6e3': '1492072769'
+}
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED=False
@@ -71,7 +82,7 @@ WANFANG_COOKIES = {
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'tutorial.middlewares.MyCustomDownloaderMiddleware': 543,
+   'tutorial.middlewares.HttpProxyMiddleware': 543,
 }
 
 # Enable or disable extensions
