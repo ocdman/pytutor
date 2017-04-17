@@ -1,62 +1,528 @@
-2017-04-13 18:06:18,157 [scrapy.utils.log] INFO: Scrapy 1.0.3 started (bot: tutorial)
-2017-04-13 18:06:18,158 [scrapy.utils.log] INFO: Optional features available: ssl, http11
-2017-04-13 18:06:18,158 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'tutorial.spiders', 'SPIDER_MODULES': ['tutorial.spiders'], 'DOWNLOAD_DELAY': 3, 'BOT_NAME': 'tutorial'}
-2017-04-13 18:06:28,390 [scrapy.middleware] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
-2017-04-13 18:06:28,723 [scrapy.middleware] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, HttpProxyMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
-2017-04-13 18:06:28,726 [scrapy.middleware] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
-2017-04-13 18:06:28,729 [scrapy.middleware] INFO: Enabled item pipelines: 
-2017-04-13 18:06:28,730 [scrapy.core.engine] INFO: Spider opened
-2017-04-13 18:06:28,733 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2017-04-13 18:06:28,734 [scrapy.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
-2017-04-13 18:06:28,739 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,740 [root] DEBUG: {'count': 0, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,744 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,744 [root] DEBUG: {'count': 1, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,746 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,749 [root] DEBUG: {'count': 2, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,750 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,753 [root] DEBUG: {'count': 3, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,759 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,760 [root] DEBUG: {'count': 4, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,763 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,765 [root] DEBUG: {'count': 5, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,769 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,769 [root] DEBUG: {'count': 6, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,773 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,773 [root] DEBUG: {'count': 7, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,779 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,780 [root] DEBUG: {'count': 8, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,782 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,783 [root] DEBUG: {'count': 9, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,788 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,789 [root] DEBUG: {'count': 10, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,792 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,792 [root] DEBUG: {'count': 11, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,796 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,799 [root] DEBUG: {'count': 12, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,802 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,802 [root] DEBUG: {'count': 13, 'valid': True, 'proxy': None}
-2017-04-13 18:06:28,806 [root] DEBUG: ['i', 'download_timeout', 'dont_redirect']
-2017-04-13 18:06:28,808 [root] DEBUG: {'count': 14, 'valid': True, 'proxy': None}
-2017-04-13 18:06:30,884 [root] DEBUG: None 200 https://xueqiu.com/v4/stock/quote.json?code=SH000001&_=5
-2017-04-13 18:06:30,891 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://xueqiu.com/v4/stock/quote.json?code=SH000001&_=5> (referer: None)
-2017-04-13 18:06:31,002 [root] INFO: SH STOCK, i: 5, response: {"SH000001":{"symbol":"SH000001","exchange":"SH","code":"000001","name":"上证指数","current":"3275.96","percentage":"0.07","change":"2.13","open":"3265.22","high":"3281.14","low":"3261.49","close":"3275.96","last_close":"3273.83","high52week":"3301.21","low52week":"2780.76","volume":"2.07346875E10","volumeAverage":"33269612703","marketCapital":"3.0903108008603E13","eps":"0.0","pe_ttm":"","pe_lyr":"","beta":"0.0","totalShares":"7472301116","time":"Thu Apr 13 15:01:03 +0800 2017","afterHours":"0.0","afterHoursPct":"0.0","afterHoursChg":"0.0","afterHoursTime":"Wed Oct 19 21:59:01 -0400 2011","updateAt":"1489006826487","dividend":"","yield":"0.0","turnover_rate":"","instOwn":"0.0","rise_stop":"0.0","fall_stop":"0.0","currency_unit":"CNY","amount":"2.232872147095E11","net_assets":"0.0","hasexist":"","has_warrant":"0","type":"12","flag":"1","rest_day":"","amplitude":"0.60%","market_status":"已收盘","lot_size":"0","min_order_quantity":"0","max_order_quantity":"0","tick_size":"0.01","kzz_stock_symbol":"","kzz_stock_name":"","kzz_stock_current":"0.0","kzz_convert_price":"0.0","kzz_covert_value":"0.0","kzz_cpr":"0.0","kzz_putback_price":"0.0","kzz_convert_time":"","kzz_redempt_price":"0.0","kzz_straight_price":"0.0","kzz_stock_percent":"","pb":"0.0","benefit_before_tax":"0.0","benefit_after_tax":"0.0","convert_bond_ratio":"","totalissuescale":"","outstandingamt":"","maturitydate":"","remain_year":"","convertrate":"0.0","interestrtmemo":"","release_date":"","circulation":"0.0","par_value":"0.0","due_time":"0.0","value_date":"","due_date":"","publisher":"","redeem_type":"","issue_type":"","bond_type":"","warrant":"","sale_rrg":"","rate":"","after_hour_vol":"0","float_shares":"2568300000000","float_market_capital":"2.5788312443641E13","disnext_pay_date":"","convert_rate":"0.0","volume_ratio":"0.81","percent5m":"0.1","psr":"","rise_count":"705","flat_count":"133","fall_count":"462"}}
-2017-04-13 18:06:32,492 [root] DEBUG: None 200 https://xueqiu.com/v4/stock/quotec.json?code=SZ399006&_=5
-2017-04-13 18:06:32,499 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://xueqiu.com/v4/stock/quotec.json?code=SZ399006&_=5> (referer: None)
-2017-04-13 18:06:32,609 [root] INFO: SZ STOCK, i: 5, response: {"SZ399006":["1910.48","12.97","0.68","Thu Apr 13 15:04:03 +0800 2017"]}
-
-
-2017-04-13 18:06:35,963 [root] DEBUG: None 200 https://xueqiu.com/v4/stock/quote.json?code=HKHSI&_=5
-2017-04-13 18:06:36,026 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://xueqiu.com/v4/stock/quote.json?code=HKHSI&_=5> (referer: None)
-2017-04-13 18:06:36,144 [root] INFO: HK STOCK, i: 5, response: {"HKHSI":{"symbol":"HKHSI","exchange":"HK","code":"HSI","name":"恒生指数","current":"24261.66","percentage":"-0.21","change":"-51.84","open":"24173.42","high":"24378.38","low":"24158.16","close":"24261.66","last_close":"24313.5","high52week":"24656.65","low52week":"19594.61","volume":"0.0","volumeAverage":"671901995","marketCapital":"5.9592701E9","eps":"0.0","pe_ttm":"9.992","pe_lyr":"","beta":"0.0","totalShares":"0","time":"Thu Apr 13 16:10:00 +0800 2017","afterHours":"0.0","afterHoursPct":"0.0","afterHoursChg":"0.0","updateAt":"1492035070041","dividend":"0.0","yield":"0.0","turnover_rate":"","instOwn":"0.0","rise_stop":"0.0","fall_stop":"0.0","currency_unit":"HKD","amount":"0.0","net_assets":"155.7234","hasexist":"","has_warrant":"0","type":"31","flag":"1","rest_day":"","amplitude":"0.91%","market_status":"已收盘","lot_size":"0","min_order_quantity":"0","max_order_quantity":"0","tick_size":"0.01","kzz_stock_symbol":"","kzz_stock_name":"","kzz_stock_current":"0.0","kzz_convert_price":"0.0","kzz_covert_value":"0.0","kzz_cpr":"0.0","kzz_putback_price":"0.0","kzz_convert_time":"","kzz_redempt_price":"0.0","kzz_straight_price":"0.0","kzz_stock_percent":"","pb":"155.8","benefit_before_tax":"0.0","benefit_after_tax":"0.0","convert_bond_ratio":"","totalissuescale":"","outstandingamt":"","maturitydate":"","remain_year":"","convertrate":"","interestrtmemo":"","release_date":"","circulation":"0.0","par_value":"0.0","due_time":"0.0","value_date":"","due_date":"","publisher":"","redeem_type":"","issue_type":"","bond_type":"","warrant":"","sale_rrg":"","rate":"","after_hour_vol":"0","float_shares":"0","float_market_capital":"5.9592701E9","disnext_pay_date":"","convert_rate":"","volume_ratio":"0.0","percent5m":"0.0"}}
-2017-04-13 18:06:40,364 [root] DEBUG: None 200 https://xueqiu.com/v4/stock/quote.json?code=SH000001&_=4
-2017-04-13 18:06:40,365 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://xueqiu.com/v4/stock/quote.json?code=SH000001&_=4> (referer: None)
-2017-04-13 18:06:40,467 [root] INFO: SH STOCK, i: 4, response: {"SH000001":{"symbol":"SH000001","exchange":"SH","code":"000001","name":"上证指数","current":"3275.96","percentage":"0.07","change":"2.13","open":"3265.22","high":"3281.14","low":"3261.49","close":"3275.96","last_close":"3273.83","high52week":"3301.21","low52week":"2780.76","volume":"2.07346875E10","volumeAverage":"33269612703","marketCapital":"3.0903108008603E13","eps":"0.0","pe_ttm":"","pe_lyr":"","beta":"0.0","totalShares":"7472301116","time":"Thu Apr 13 15:01:03 +0800 2017","afterHours":"0.0","afterHoursPct":"0.0","afterHoursChg":"0.0","afterHoursTime":"Wed Oct 19 21:59:01 -0400 2011","updateAt":"1489006826487","dividend":"","yield":"0.0","turnover_rate":"","instOwn":"0.0","rise_stop":"0.0","fall_stop":"0.0","currency_unit":"CNY","amount":"2.232872147095E11","net_assets":"0.0","hasexist":"","has_warrant":"0","type":"12","flag":"1","rest_day":"","amplitude":"0.60%","market_status":"已收盘","lot_size":"0","min_order_quantity":"0","max_order_quantity":"0","tick_size":"0.01","kzz_stock_symbol":"","kzz_stock_name":"","kzz_stock_current":"0.0","kzz_convert_price":"0.0","kzz_covert_value":"0.0","kzz_cpr":"0.0","kzz_putback_price":"0.0","kzz_convert_time":"","kzz_redempt_price":"0.0","kzz_straight_price":"0.0","kzz_stock_percent":"","pb":"0.0","benefit_before_tax":"0.0","benefit_after_tax":"0.0","convert_bond_ratio":"","totalissuescale":"","outstandingamt":"","maturitydate":"","remain_year":"","convertrate":"0.0","interestrtmemo":"","release_date":"","circulation":"0.0","par_value":"0.0","due_time":"0.0","value_date":"","due_date":"","publisher":"","redeem_type":"","issue_type":"","bond_type":"","warrant":"","sale_rrg":"","rate":"","after_hour_vol":"0","float_shares":"2568300000000","float_market_capital":"2.5788312443641E13","disnext_pay_date":"","convert_rate":"0.0","volume_ratio":"0.81","percent5m":"0.1","psr":"","rise_count":"705","flat_count":"133","fall_count":"462"}}
-2017-04-13 18:06:44,154 [root] DEBUG: None 200 https://xueqiu.com/v4/stock/quotec.json?code=SZ399006&_=4
-2017-04-13 18:06:44,157 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://xueqiu.com/v4/stock/quotec.json?code=SZ399006&_=4> (referer: None)
-2017-04-13 18:06:44,265 [root] INFO: SZ STOCK, i: 4, response: {"SZ399006":["1910.48","12.97","0.68","Thu Apr 13 15:04:03 +0800 2017"]}
-
-
-2017-04-13 18:06:47,677 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
-2017-04-13 18:06:47,684 [scrapy.core.engine] INFO: Closing spider (shutdown)
-2017-04-13 18:06:48,190 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2017-04-17 17:47:17,009 [scrapy.utils.log] INFO: Scrapy 1.0.3 started (bot: tutorial)
+2017-04-17 17:47:17,009 [scrapy.utils.log] INFO: Optional features available: ssl, http11
+2017-04-17 17:47:17,009 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'tutorial.spiders', 'SPIDER_MODULES': ['tutorial.spiders'], 'DOWNLOAD_DELAY': 1, 'BOT_NAME': 'tutorial'}
+2017-04-17 17:47:26,204 [scrapy.middleware] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2017-04-17 17:47:26,549 [scrapy.middleware] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2017-04-17 17:47:26,553 [scrapy.middleware] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2017-04-17 17:47:26,595 [scrapy.middleware] INFO: Enabled item pipelines: TutorialPipeline
+2017-04-17 17:47:26,596 [scrapy.core.engine] INFO: Spider opened
+2017-04-17 17:47:26,598 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-04-17 17:47:26,601 [scrapy.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-04-17 17:47:26,867 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=9&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:27,000 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=9&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,733 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:27,917 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,921 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,924 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,938 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,943 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,947 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,951 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,957 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,963 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:27,967 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,200 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:29,348 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,351 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,355 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,358 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,371 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,375 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,380 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,384 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,390 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:29,394 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,003 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:30,227 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,240 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,253 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,265 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,270 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,279 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,286 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,292 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,298 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:30,305 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,086 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:31,257 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,263 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,266 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,272 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,276 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,280 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,285 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,290 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,296 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:31,302 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,513 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:32,671 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,676 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,678 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,683 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,687 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,691 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,696 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,700 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,704 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:32,710 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,209 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:33,342 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,345 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,348 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,351 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,365 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,368 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,369 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,374 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,378 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:33,381 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,509 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:34,641 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,644 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,647 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,651 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,661 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,665 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,668 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,674 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,677 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:34,681 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,434 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4> (referer: None)
+2017-04-17 17:47:35,582 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,586 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,591 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,595 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,598 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,601 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,608 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,611 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,615 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:35,621 [scrapy.core.scraper] DEBUG: Scraped from <200 http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4>
+None
+2017-04-17 17:47:36,650 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2059343/2059343/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=9&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:37,694 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/1975054/1975054/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:38,247 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/5c52fc64-ea57-4ac9-9cc4-9d612673eab1> (referer: http://d.dxy.cn/bbs/purchase/download/2059343/2059343/check?share=undefined)
+2017-04-17 17:47:38,608 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/5c52fc64-ea57-4ac9-9cc4-9d612673eab1>
+None
+2017-04-17 17:47:38,611 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2020769/2020769/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:39,091 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/425ca73f-17bb-42bb-8042-499d74fd3121> (referer: http://d.dxy.cn/bbs/purchase/download/1975054/1975054/check?share=undefined)
+2017-04-17 17:47:39,400 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/425ca73f-17bb-42bb-8042-499d74fd3121>
+None
+2017-04-17 17:47:40,053 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/1760185/1760185/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:40,369 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/c4ffc6ac-394f-412f-a371-2d5111d0ab31> (referer: http://d.dxy.cn/bbs/purchase/download/2020769/2020769/check?share=undefined)
+2017-04-17 17:47:40,585 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/c4ffc6ac-394f-412f-a371-2d5111d0ab31>
+None
+2017-04-17 17:47:40,836 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8949684/8949684/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:41,663 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8361060/8361060/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:41,950 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/bfe245b6-ba74-4587-8a06-c8047d236751> (referer: http://d.dxy.cn/bbs/purchase/download/1760185/1760185/check?share=undefined)
+2017-04-17 17:47:42,288 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/bfe245b6-ba74-4587-8a06-c8047d236751>
+None
+2017-04-17 17:47:43,086 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4636917/4636917/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:43,486 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/cbbe0e9f-b04c-4ca1-9f7a-e277236a9db4> (referer: http://d.dxy.cn/bbs/purchase/download/8949684/8949684/check?share=undefined)
+2017-04-17 17:47:44,084 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/cbbe0e9f-b04c-4ca1-9f7a-e277236a9db4>
+None
+2017-04-17 17:47:44,302 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/56b8e5a3-b5c2-4268-9cbf-09d990404077> (referer: http://d.dxy.cn/bbs/purchase/download/8361060/8361060/check?share=undefined)
+2017-04-17 17:47:44,355 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4636916/4636916/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:44,453 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/56b8e5a3-b5c2-4268-9cbf-09d990404077>
+None
+2017-04-17 17:47:45,163 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4636915/4636915/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:46,611 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4493042/4493042/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:48,473 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/1995899/1995899/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:48,608 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/2f00dc79-1378-4f12-bc7f-ade1218a2af1> (referer: http://d.dxy.cn/bbs/purchase/download/4636916/4636916/check?share=undefined)
+2017-04-17 17:47:48,973 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/2f00dc79-1378-4f12-bc7f-ade1218a2af1>
+None
+2017-04-17 17:47:50,088 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2194409/2194409/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:51,289 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2464411/2464411/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:51,470 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/e0e905ee-d9fe-48cc-bc99-ad6af87283a5> (referer: http://d.dxy.cn/bbs/purchase/download/4493042/4493042/check?share=undefined)
+2017-04-17 17:47:51,664 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/e0e905ee-d9fe-48cc-bc99-ad6af87283a5>
+None
+2017-04-17 17:47:51,691 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/5be802e7-ad9d-4554-95b0-10fdfd05d58d> (referer: http://d.dxy.cn/bbs/purchase/download/2194409/2194409/check?share=undefined)
+2017-04-17 17:47:51,852 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/5be802e7-ad9d-4554-95b0-10fdfd05d58d>
+None
+2017-04-17 17:47:51,855 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/3a6d506b-36df-4cfb-8fda-9ec16e3233f4> (referer: http://d.dxy.cn/bbs/purchase/download/4636915/4636915/check?share=undefined)
+2017-04-17 17:47:52,101 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/3a6d506b-36df-4cfb-8fda-9ec16e3233f4>
+None
+2017-04-17 17:47:52,276 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6447744/6447744/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:52,627 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/d19fd728-b07e-4081-bf17-d6fc7e82055e> (referer: http://d.dxy.cn/bbs/purchase/download/2464411/2464411/check?share=undefined)
+2017-04-17 17:47:52,746 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/d19fd728-b07e-4081-bf17-d6fc7e82055e>
+None
+2017-04-17 17:47:52,941 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/1a5b80e9-bd02-407f-b580-92a5a289c6e5> (referer: http://d.dxy.cn/bbs/purchase/download/1995899/1995899/check?share=undefined)
+2017-04-17 17:47:53,648 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/1a5b80e9-bd02-407f-b580-92a5a289c6e5>
+None
+2017-04-17 17:47:53,832 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7402369/7402369/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:54,490 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/4cded63b-995e-4baf-8302-6d932d2e87a8> (referer: http://d.dxy.cn/bbs/purchase/download/6447744/6447744/check?share=undefined)
+2017-04-17 17:47:54,865 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/4cded63b-995e-4baf-8302-6d932d2e87a8>
+None
+2017-04-17 17:47:55,204 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/5857982/5857982/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:56,907 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7392461/7392461/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:57,628 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/89d5f146-f788-4976-b1c0-8d3cdcbaac5f> (referer: http://d.dxy.cn/bbs/purchase/download/7402369/7402369/check?share=undefined)
+2017-04-17 17:47:57,846 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/89d5f146-f788-4976-b1c0-8d3cdcbaac5f>
+None
+2017-04-17 17:47:57,848 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6293925/6293925/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:57,852 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/2cfb8d93-cddd-4753-a372-a0b1d5bbe7aa> (referer: http://d.dxy.cn/bbs/purchase/download/5857982/5857982/check?share=undefined)
+2017-04-17 17:47:58,107 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/2cfb8d93-cddd-4753-a372-a0b1d5bbe7aa>
+None
+2017-04-17 17:47:58,690 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6247138/6247138/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:58,828 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/2df010a4-f1db-46d6-8fff-295ee876c684> (referer: http://d.dxy.cn/bbs/purchase/download/7392461/7392461/check?share=undefined)
+2017-04-17 17:47:59,094 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/2df010a4-f1db-46d6-8fff-295ee876c684>
+None
+2017-04-17 17:47:59,473 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6157496/6157496/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:47:59,552 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/6b0fac59-cd2a-4852-985f-6b8bb6238400> (referer: http://d.dxy.cn/bbs/purchase/download/4636917/4636917/check?share=undefined)
+2017-04-17 17:47:59,621 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/e5701952-685c-43d6-81d5-568a23387fb0> (referer: http://d.dxy.cn/bbs/purchase/download/6293925/6293925/check?share=undefined)
+2017-04-17 17:48:05,453 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/6b0fac59-cd2a-4852-985f-6b8bb6238400>
+None
+2017-04-17 17:48:05,556 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/e5701952-685c-43d6-81d5-568a23387fb0>
+None
+2017-04-17 17:48:05,736 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7368663/7368663/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:06,101 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/d31912f6-9a94-4c35-b927-3653286fbbf5> (referer: http://d.dxy.cn/bbs/purchase/download/6247138/6247138/check?share=undefined)
+2017-04-17 17:48:06,273 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/d31912f6-9a94-4c35-b927-3653286fbbf5>
+None
+2017-04-17 17:48:06,763 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6441679/6441679/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:06,996 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/f43b5274-e44b-4279-9499-29564235ff4d> (referer: http://d.dxy.cn/bbs/purchase/download/6157496/6157496/check?share=undefined)
+2017-04-17 17:48:07,184 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/f43b5274-e44b-4279-9499-29564235ff4d>
+None
+2017-04-17 17:48:08,053 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6157494/6157494/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:09,474 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7395351/7395351/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:09,864 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/37e63f10-7f46-449b-a72e-8da1bafdb28a> (referer: http://d.dxy.cn/bbs/purchase/download/7368663/7368663/check?share=undefined)
+2017-04-17 17:48:10,137 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/37e63f10-7f46-449b-a72e-8da1bafdb28a>
+None
+2017-04-17 17:48:10,388 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/09e7f885-da8f-423f-83c5-6238f669c08e> (referer: http://d.dxy.cn/bbs/purchase/download/6441679/6441679/check?share=undefined)
+2017-04-17 17:48:10,516 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/09e7f885-da8f-423f-83c5-6238f669c08e>
+None
+2017-04-17 17:48:10,805 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6293923/6293923/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:11,424 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/0e847e73-ed32-4367-a785-c293de9eef7e> (referer: http://d.dxy.cn/bbs/purchase/download/6157494/6157494/check?share=undefined)
+2017-04-17 17:48:11,612 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/0e847e73-ed32-4367-a785-c293de9eef7e>
+None
+2017-04-17 17:48:11,977 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8025365/8025365/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=1&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:13,714 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/5857971/5857971/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:14,012 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/1deb8900-6242-465e-8e63-2ab6b6510cef> (referer: http://d.dxy.cn/bbs/purchase/download/7395351/7395351/check?share=undefined)
+2017-04-17 17:48:14,118 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4614844/4614844/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:14,267 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/1deb8900-6242-465e-8e63-2ab6b6510cef>
+None
+2017-04-17 17:48:15,517 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7493411/7493411/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:16,135 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/e29d3a58-b5dd-4df4-8495-00a5d3047088> (referer: http://d.dxy.cn/bbs/purchase/download/5857971/5857971/check?share=undefined)
+2017-04-17 17:48:16,253 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/e29d3a58-b5dd-4df4-8495-00a5d3047088>
+None
+2017-04-17 17:48:16,974 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6361688/6361688/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:17,463 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/89681567-9c30-451f-9fb9-2d88039d44a1> (referer: http://d.dxy.cn/bbs/purchase/download/4614844/4614844/check?share=undefined)
+2017-04-17 17:48:17,532 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/61a5ddaa-aba2-4212-a4fe-7f23e97e6eca> (referer: http://d.dxy.cn/bbs/purchase/download/8025365/8025365/check?share=undefined)
+2017-04-17 17:48:17,595 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/89681567-9c30-451f-9fb9-2d88039d44a1>
+None
+2017-04-17 17:48:17,848 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/61a5ddaa-aba2-4212-a4fe-7f23e97e6eca>
+None
+2017-04-17 17:48:17,858 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/3c3d5cfa-ec42-4fe7-8446-9e3ebe2f5ce9> (referer: http://d.dxy.cn/bbs/purchase/download/6293923/6293923/check?share=undefined)
+2017-04-17 17:48:18,371 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/3c3d5cfa-ec42-4fe7-8446-9e3ebe2f5ce9>
+None
+2017-04-17 17:48:19,042 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8970353/8970353/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:19,335 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/5e72b2c1-50a0-4734-accb-48f21f01efa6> (referer: http://d.dxy.cn/bbs/purchase/download/6361688/6361688/check?share=undefined)
+2017-04-17 17:48:19,453 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/5e72b2c1-50a0-4734-accb-48f21f01efa6>
+None
+2017-04-17 17:48:19,790 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8758760/8758760/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:20,950 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7268492/7268492/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:21,140 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/df9bb1ad-7107-47e5-b026-4e31142e3291> (referer: http://d.dxy.cn/bbs/purchase/download/8970353/8970353/check?share=undefined)
+2017-04-17 17:48:21,480 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/df9bb1ad-7107-47e5-b026-4e31142e3291>
+None
+2017-04-17 17:48:21,956 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2308451/2308451/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:22,732 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/d566f492-a544-4497-8d86-2665749cd7e8> (referer: http://d.dxy.cn/bbs/purchase/download/8758760/8758760/check?share=undefined)
+2017-04-17 17:48:23,006 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/d566f492-a544-4497-8d86-2665749cd7e8>
+None
+2017-04-17 17:48:23,217 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/12307329/12307329/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=2&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:25,573 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/c8cf1dc2-075f-4356-a3d2-0259822e71ea> (referer: http://d.dxy.cn/bbs/purchase/download/7268492/7268492/check?share=undefined)
+2017-04-17 17:48:25,927 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/c8cf1dc2-075f-4356-a3d2-0259822e71ea>
+None
+2017-04-17 17:48:25,934 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7402311/7402311/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:25,938 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/680344ee-333c-45d4-b5f0-c27607c4bbcd> (referer: http://d.dxy.cn/bbs/purchase/download/2308451/2308451/check?share=undefined)
+2017-04-17 17:48:25,943 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/62a588fb-87a2-4080-8c78-e9c0343ca79e> (referer: http://d.dxy.cn/bbs/purchase/download/12307329/12307329/check?share=undefined)
+2017-04-17 17:48:26,203 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/680344ee-333c-45d4-b5f0-c27607c4bbcd>
+None
+2017-04-17 17:48:26,204 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7360978/7360978/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:26,301 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/62a588fb-87a2-4080-8c78-e9c0343ca79e>
+None
+2017-04-17 17:48:26,598 [scrapy.extensions.logstats] INFO: Crawled 80 pages (at 80 pages/min), scraped 115 items (at 115 items/min)
+2017-04-17 17:48:27,407 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7360975/7360975/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:28,046 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/386124a3-d7a6-4924-b160-acfdaca367f0> (referer: http://d.dxy.cn/bbs/purchase/download/7402311/7402311/check?share=undefined)
+2017-04-17 17:48:28,293 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/386124a3-d7a6-4924-b160-acfdaca367f0>
+None
+2017-04-17 17:48:28,460 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7360329/7360329/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:28,956 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/a2188f42-e60f-47c8-b50c-da6ed2867fef> (referer: http://d.dxy.cn/bbs/purchase/download/7360978/7360978/check?share=undefined)
+2017-04-17 17:48:29,105 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/a2188f42-e60f-47c8-b50c-da6ed2867fef>
+None
+2017-04-17 17:48:29,826 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7305201/7305201/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:31,601 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7291806/7291806/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:32,079 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/5a4497d2-fec5-420f-b935-cc216b9c420d> (referer: http://d.dxy.cn/bbs/purchase/download/7360975/7360975/check?share=undefined)
+2017-04-17 17:48:32,474 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/5a4497d2-fec5-420f-b935-cc216b9c420d>
+None
+2017-04-17 17:48:33,561 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7260354/7260354/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:33,608 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/9d5f787d-4750-4edd-afc3-f7b0c4bb934e> (referer: http://d.dxy.cn/bbs/purchase/download/7360329/7360329/check?share=undefined)
+2017-04-17 17:48:33,855 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/9d5f787d-4750-4edd-afc3-f7b0c4bb934e>
+None
+2017-04-17 17:48:33,858 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6482462/6482462/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:34,053 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/05755230-b4d7-4113-8641-58341fd6dccb> (referer: http://d.dxy.cn/bbs/purchase/download/7305201/7305201/check?share=undefined)
+2017-04-17 17:48:34,279 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/05755230-b4d7-4113-8641-58341fd6dccb>
+None
+2017-04-17 17:48:34,444 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6402236/6402236/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=3&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:34,763 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/6a4a34b0-b26b-4543-a2e6-39cd97c6939a> (referer: http://d.dxy.cn/bbs/purchase/download/7291806/7291806/check?share=undefined)
+2017-04-17 17:48:34,950 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/6a4a34b0-b26b-4543-a2e6-39cd97c6939a>
+None
+2017-04-17 17:48:35,234 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2352557/2352557/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:35,744 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/d6184492-44cf-4533-b85b-1a68b88f5d9c> (referer: http://d.dxy.cn/bbs/purchase/download/7260354/7260354/check?share=undefined)
+2017-04-17 17:48:36,344 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/d6184492-44cf-4533-b85b-1a68b88f5d9c>
+None
+2017-04-17 17:48:36,359 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/6720e5ee-46bf-4993-9685-8cfc2fb700c4> (referer: http://d.dxy.cn/bbs/purchase/download/7493411/7493411/check?share=undefined)
+2017-04-17 17:48:42,203 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/6720e5ee-46bf-4993-9685-8cfc2fb700c4>
+None
+2017-04-17 17:48:42,207 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/12252881/12252881/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:42,223 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/434b181d-7874-4725-8022-b9a174bf4b52> (referer: http://d.dxy.cn/bbs/purchase/download/6482462/6482462/check?share=undefined)
+2017-04-17 17:48:42,622 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/434b181d-7874-4725-8022-b9a174bf4b52>
+None
+2017-04-17 17:48:42,664 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/9004610/9004610/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:42,711 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/cc89cb41-0de9-47d7-b05f-b0b2d5483380> (referer: http://d.dxy.cn/bbs/purchase/download/6402236/6402236/check?share=undefined)
+2017-04-17 17:48:42,915 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/cc89cb41-0de9-47d7-b05f-b0b2d5483380>
+None
+2017-04-17 17:48:43,552 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/6d57969b-9628-4057-b10a-702448061dd4> (referer: http://d.dxy.cn/bbs/purchase/download/2352557/2352557/check?share=undefined)
+2017-04-17 17:48:43,737 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/6d57969b-9628-4057-b10a-702448061dd4>
+None
+2017-04-17 17:48:43,894 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6394056/6394056/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:44,961 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6293924/6293924/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:46,256 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6293921/6293921/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:46,298 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/d6a3d499-ba66-49e1-9068-4ba3917bbc00> (referer: http://d.dxy.cn/bbs/purchase/download/9004610/9004610/check?share=undefined)
+2017-04-17 17:48:46,479 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/d6a3d499-ba66-49e1-9068-4ba3917bbc00>
+None
+2017-04-17 17:48:47,579 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6145371/6145371/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:48,499 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/9d431b05-89ab-43b5-9083-0d498fb1f3c6> (referer: http://d.dxy.cn/bbs/purchase/download/6394056/6394056/check?share=undefined)
+2017-04-17 17:48:49,003 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/9d431b05-89ab-43b5-9083-0d498fb1f3c6>
+None
+2017-04-17 17:48:49,316 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/11855989/11855989/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:50,128 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7536359/7536359/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=4&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:50,686 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/a7024132-e744-4c84-a555-ad6837e68b3e> (referer: http://d.dxy.cn/bbs/purchase/download/6293921/6293921/check?share=undefined)
+2017-04-17 17:48:50,693 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/1940303/1940303/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:50,829 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/a7024132-e744-4c84-a555-ad6837e68b3e>
+None
+2017-04-17 17:48:51,275 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/82fb0d64-711f-4c08-bed6-e685a4600a39> (referer: http://d.dxy.cn/bbs/purchase/download/6293924/6293924/check?share=undefined)
+2017-04-17 17:48:51,568 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/82fb0d64-711f-4c08-bed6-e685a4600a39>
+None
+2017-04-17 17:48:52,052 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/72328/72328/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:52,288 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/6047684a-40e4-4192-9551-443a5adbeeca> (referer: http://d.dxy.cn/bbs/purchase/download/6145371/6145371/check?share=undefined)
+2017-04-17 17:48:52,986 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/6047684a-40e4-4192-9551-443a5adbeeca>
+None
+2017-04-17 17:48:53,211 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/cdac4130-58fa-49ed-a827-efc11da3486c> (referer: http://d.dxy.cn/bbs/purchase/download/11855989/11855989/check?share=undefined)
+2017-04-17 17:48:53,216 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8071116/8071116/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:53,377 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/cdac4130-58fa-49ed-a827-efc11da3486c>
+None
+2017-04-17 17:48:54,155 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/26d2a572-9a71-4ad2-8c52-fcb5e6a0db63> (referer: http://d.dxy.cn/bbs/purchase/download/12252881/12252881/check?share=undefined)
+2017-04-17 17:48:56,634 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/26d2a572-9a71-4ad2-8c52-fcb5e6a0db63>
+None
+2017-04-17 17:48:56,637 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6006972/6006972/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:56,805 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6006971/6006971/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:57,127 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/c0f8e562-44c6-49d3-b5da-5d2c570fec48> (referer: http://d.dxy.cn/bbs/purchase/download/7536359/7536359/check?share=undefined)
+2017-04-17 17:48:57,551 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/c0f8e562-44c6-49d3-b5da-5d2c570fec48>
+None
+2017-04-17 17:48:57,555 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/72bade84-7607-40d9-ba65-c990fd08df5e> (referer: http://d.dxy.cn/bbs/purchase/download/1940303/1940303/check?share=undefined)
+2017-04-17 17:48:57,809 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/72bade84-7607-40d9-ba65-c990fd08df5e>
+None
+2017-04-17 17:48:58,178 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8977256/8977256/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:58,180 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/d57e1806-89f4-4464-b67a-8922a720fbae> (referer: http://d.dxy.cn/bbs/purchase/download/72328/72328/check?share=undefined)
+2017-04-17 17:48:58,290 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/d57e1806-89f4-4464-b67a-8922a720fbae>
+None
+2017-04-17 17:48:59,263 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2311902/2311902/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:48:59,581 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/f5e8ea11-7d97-4313-ae53-745fc8a1df01> (referer: http://d.dxy.cn/bbs/purchase/download/8071116/8071116/check?share=undefined)
+2017-04-17 17:48:59,759 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/f5e8ea11-7d97-4313-ae53-745fc8a1df01>
+None
+2017-04-17 17:49:00,163 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7353316/7353316/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:01,349 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7246901/7246901/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=5&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:01,964 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/501f6a03-a384-4faf-b818-bfba66718486> (referer: http://d.dxy.cn/bbs/purchase/download/6006972/6006972/check?share=undefined)
+2017-04-17 17:49:02,703 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/501f6a03-a384-4faf-b818-bfba66718486>
+None
+2017-04-17 17:49:02,859 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/1991653/1991653/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:04,161 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/58a1214b-db5f-442b-bc6b-483479512c2a> (referer: http://d.dxy.cn/bbs/purchase/download/8977256/8977256/check?share=undefined)
+2017-04-17 17:49:04,390 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/58a1214b-db5f-442b-bc6b-483479512c2a>
+None
+2017-04-17 17:49:04,392 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8922423/8922423/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:05,275 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8400542/8400542/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:07,132 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/7563901/7563901/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:07,848 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4870447/4870447/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:08,667 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/8785b8d5-cb46-4c80-b21b-8c9ad744b4e3> (referer: http://d.dxy.cn/bbs/purchase/download/7353316/7353316/check?share=undefined)
+2017-04-17 17:49:08,881 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/8785b8d5-cb46-4c80-b21b-8c9ad744b4e3>
+None
+2017-04-17 17:49:08,982 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4870446/4870446/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:09,207 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/44ce3302-b23b-45be-a7b9-c110c83aae2b> (referer: http://d.dxy.cn/bbs/purchase/download/7246901/7246901/check?share=undefined)
+2017-04-17 17:49:09,344 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/44ce3302-b23b-45be-a7b9-c110c83aae2b>
+None
+2017-04-17 17:49:09,470 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/699348f8-280b-40f4-a486-d691418cfc92> (referer: http://d.dxy.cn/bbs/purchase/download/6006971/6006971/check?share=undefined)
+2017-04-17 17:49:10,778 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/699348f8-280b-40f4-a486-d691418cfc92>
+None
+2017-04-17 17:49:10,786 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/0a5c6e0e-d46f-4dd1-9f3e-96aa6716eae4> (referer: http://d.dxy.cn/bbs/purchase/download/1991653/1991653/check?share=undefined)
+2017-04-17 17:49:10,924 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/0a5c6e0e-d46f-4dd1-9f3e-96aa6716eae4>
+None
+2017-04-17 17:49:11,072 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4870445/4870445/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:11,559 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/81cece9c-411d-448f-b4cb-71bd42091660> (referer: http://d.dxy.cn/bbs/purchase/download/8922423/8922423/check?share=undefined)
+2017-04-17 17:49:11,769 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/81cece9c-411d-448f-b4cb-71bd42091660>
+None
+2017-04-17 17:49:12,010 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4870444/4870444/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:12,055 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/a19b69fa-3052-4d38-b74a-0162054132f8> (referer: http://d.dxy.cn/bbs/purchase/download/2311902/2311902/check?share=undefined)
+2017-04-17 17:49:14,578 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/a19b69fa-3052-4d38-b74a-0162054132f8>
+None
+2017-04-17 17:49:14,586 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/85323188-3c0d-4245-9f47-30f85a026c36> (referer: http://d.dxy.cn/bbs/purchase/download/8400542/8400542/check?share=undefined)
+2017-04-17 17:49:14,811 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/85323188-3c0d-4245-9f47-30f85a026c36>
+None
+2017-04-17 17:49:14,835 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/5020851/5020851/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=6&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:15,471 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/f75621e0-2203-4887-a4f5-4426d6b0319c> (referer: http://d.dxy.cn/bbs/purchase/download/7563901/7563901/check?share=undefined)
+2017-04-17 17:49:15,950 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/f75621e0-2203-4887-a4f5-4426d6b0319c>
+None
+2017-04-17 17:49:16,122 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2194408/2194408/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:16,377 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/f4bfe2da-3745-436d-98a0-43700e1f19c8> (referer: http://d.dxy.cn/bbs/purchase/download/4870447/4870447/check?share=undefined)
+2017-04-17 17:49:16,612 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/f4bfe2da-3745-436d-98a0-43700e1f19c8>
+None
+2017-04-17 17:49:17,082 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8008871/8008871/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:18,230 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/55a9244b-2f79-4351-b2e9-cb6038ebf17f> (referer: http://d.dxy.cn/bbs/purchase/download/4870446/4870446/check?share=undefined)
+2017-04-17 17:49:18,505 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/55a9244b-2f79-4351-b2e9-cb6038ebf17f>
+None
+2017-04-17 17:49:18,660 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4256274/4256274/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:19,792 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/6312166/6312166/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:19,825 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/e7ad38e8-05fe-4d40-882d-bcbbcfc28659> (referer: http://d.dxy.cn/bbs/purchase/download/4870445/4870445/check?share=undefined)
+2017-04-17 17:49:20,359 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/e7ad38e8-05fe-4d40-882d-bcbbcfc28659>
+None
+2017-04-17 17:49:20,365 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/a65811a6-8f97-48cb-8e9e-bd70e90f50a3> (referer: http://d.dxy.cn/bbs/purchase/download/4870444/4870444/check?share=undefined)
+2017-04-17 17:49:20,440 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/6e5d418c-c0c5-488d-a4ec-f957ca52cf33> (referer: http://d.dxy.cn/bbs/purchase/download/5020851/5020851/check?share=undefined)
+2017-04-17 17:49:20,552 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/a65811a6-8f97-48cb-8e9e-bd70e90f50a3>
+None
+2017-04-17 17:49:20,563 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/6e5d418c-c0c5-488d-a4ec-f957ca52cf33>
+None
+2017-04-17 17:49:20,812 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/5069285/5069285/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:21,947 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/bb197c15-14ab-496b-bab5-29c3e5a15bfb> (referer: http://d.dxy.cn/bbs/purchase/download/2194408/2194408/check?share=undefined)
+2017-04-17 17:49:21,983 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4636429/4636429/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:22,247 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/bb197c15-14ab-496b-bab5-29c3e5a15bfb>
+None
+2017-04-17 17:49:23,686 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/8769064/8769064/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:23,776 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/bb112967-1d4f-44d8-90d0-c49828b30fe3> (referer: http://d.dxy.cn/bbs/purchase/download/8008871/8008871/check?share=undefined)
+2017-04-17 17:49:24,006 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/bb112967-1d4f-44d8-90d0-c49828b30fe3>
+None
+2017-04-17 17:49:24,171 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/4575795/4575795/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:25,690 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2382540/2382540/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=7&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:25,864 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/0290e39a-5baf-46f9-8638-4aab0827664c> (referer: http://d.dxy.cn/bbs/purchase/download/4256274/4256274/check?share=undefined)
+2017-04-17 17:49:26,174 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/0290e39a-5baf-46f9-8638-4aab0827664c>
+None
+2017-04-17 17:49:26,599 [scrapy.extensions.logstats] INFO: Crawled 163 pages (at 83 pages/min), scraped 155 items (at 40 items/min)
+2017-04-17 17:49:27,240 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://d.dxy.cn/bbs/purchase/download/2356665/2356665/check?share=undefined> (referer: http://d.dxy.cn/search?tpg=8&keyword=%E6%8A%91%E9%83%81%E7%97%87&free=on&ext=4)
+2017-04-17 17:49:28,946 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/c7f3ab55-2d8d-437b-99cb-281ef7205274> (referer: http://d.dxy.cn/bbs/purchase/download/4636429/4636429/check?share=undefined)
+2017-04-17 17:49:29,127 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/c7f3ab55-2d8d-437b-99cb-281ef7205274>
+None
+2017-04-17 17:49:30,786 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/89345cd4-6a89-4f6e-b854-79ceee9d9899> (referer: http://d.dxy.cn/bbs/purchase/download/8769064/8769064/check?share=undefined)
+2017-04-17 17:49:31,003 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/89345cd4-6a89-4f6e-b854-79ceee9d9899>
+None
+2017-04-17 17:49:32,147 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/535bfe06-6f91-4dd6-9cc3-0a87d8395bae> (referer: http://d.dxy.cn/bbs/purchase/download/5069285/5069285/check?share=undefined)
+2017-04-17 17:49:32,188 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/b2a85e1a-73ce-4918-b39f-09a83d57b2c0> (referer: http://d.dxy.cn/bbs/purchase/download/6312166/6312166/check?share=undefined)
+2017-04-17 17:49:32,703 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/535bfe06-6f91-4dd6-9cc3-0a87d8395bae>
+None
+2017-04-17 17:49:32,779 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/f375bee1-96a1-4d19-8c3a-094ac1c77522> (referer: http://d.dxy.cn/bbs/purchase/download/4575795/4575795/check?share=undefined)
+2017-04-17 17:49:32,782 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/0a3c2708-233f-4c97-829e-78b05ec70394> (referer: http://d.dxy.cn/bbs/purchase/download/2382540/2382540/check?share=undefined)
+2017-04-17 17:49:33,756 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/b2a85e1a-73ce-4918-b39f-09a83d57b2c0>
+None
+2017-04-17 17:49:34,170 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/f375bee1-96a1-4d19-8c3a-094ac1c77522>
+None
+2017-04-17 17:49:34,338 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/0a3c2708-233f-4c97-829e-78b05ec70394>
+None
+2017-04-17 17:49:37,697 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://down.dxy.cn/c4d0914f-9dd4-4181-b0ee-1c79ed2f63ed> (referer: http://d.dxy.cn/bbs/purchase/download/2356665/2356665/check?share=undefined)
+2017-04-17 17:49:37,947 [scrapy.core.scraper] DEBUG: Scraped from <200 http://down.dxy.cn/c4d0914f-9dd4-4181-b0ee-1c79ed2f63ed>
+None
+2017-04-17 17:49:37,950 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-04-17 17:49:37,951 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 104449,
+ 'downloader/request_count': 171,
+ 'downloader/request_method_count/GET': 171,
+ 'downloader/response_bytes': 65815257,
+ 'downloader/response_count': 171,
+ 'downloader/response_status_count/200': 171,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 4, 17, 9, 49, 37, 951000),
+ 'item_scraped_count': 162,
+ 'log_count/DEBUG': 334,
+ 'log_count/INFO': 9,
+ 'request_depth_max': 2,
+ 'response_received_count': 171,
+ 'scheduler/dequeued': 171,
+ 'scheduler/dequeued/memory': 171,
+ 'scheduler/enqueued': 171,
+ 'scheduler/enqueued/memory': 171,
+ 'start_time': datetime.datetime(2017, 4, 17, 9, 47, 26, 600000)}
+2017-04-17 17:49:37,953 [scrapy.core.engine] INFO: Spider closed (finished)

@@ -8,9 +8,18 @@
 import pymssql
 import json
 import threading
+import logging
 
 from tutorial.items import *
 from tutorial.settings import *
+
+# set up logging to file
+logging.basicConfig(
+	filename='logging.txt',
+	filemode = 'wb',
+	format='%(asctime)s [%(name)s] %(levelname)s: %(message)s',
+	level=logging.DEBUG
+)
 
 class TutorialPipeline(object):
 
@@ -53,4 +62,14 @@ class TutorialPipeline(object):
 			self.cursor.execute("insert into wanfangexaminations(id, recordtype, cname, ename, nameinfo, summarize, indication, reference, clinical, samples, precautions, category, initial, articlecount, categoryshort, categoryroot, author, checker) values ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9}, {10}, {11}, {12}, {13}, {14}, {15}, {16}, {17})".format(item['ID'], item['RecordType'], item['CName'], item['EName'], item['NameInfo'], item['Summarize'], item['Indication'], item['Reference'], item['Clinical'], item['Samples'], item['Precautions'], item['Category'], item['Initial'], item['ArticleCount'], item['CategoryShort'], item['CategoryRoot'], item['Author'], item['Checker']))
 			self.conn.commit()
 			self.lock.release()
+		elif isinstance(item, DxyDocumentItem):
+			self.lock.acquire()
+			if('byteContent' in item and item['byteContent']):
+				self.cursor.execute("update dxydocuments set byteContent={0} where id={1}".format(item['byteContent'], item['id']))
+			else:
+				self.cursor.execute("insert into dxydocuments(id, name, downloadurl, uploadtime, [description], sourcetype, [user], size, classification) values ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})".format(item['id'], item['name'], item['downloadUrl'], item['uploadTime'], item['description'], item['sourceType'], item['user'], item['size'], item['classification']))
+			self.conn.commit()
+			self.lock.release()
+			
         # return item
+

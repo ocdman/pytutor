@@ -148,6 +148,7 @@ class HttpProxyMiddleware(object):
 
 			if self.proxyes[index]['count'] < self.dump_count_threshold:
 				self.dump_valid_proxy()
+
 	'''
 	将代理列表的索引移到下一个有效代理的位置
 	如果发现代理列表只有fixed_proxy项有效，重置代理列表
@@ -256,11 +257,14 @@ class HttpProxyMiddleware(object):
 			# WARN: 直连时超时的话换个代理还是重试，这是个策略问题
 			if request_proxy_index > self.fixed_proxy - 1 and self.invalid_proxy_flag:
 				if self.proxyes[request_proxy_index]['count'] < self.invalid_proxy_threshold:
+					logging.info('exception occure when proxy connection, invalid proxy')
 					self.invalid_proxy(request_proxy_index)
 				elif request_proxy_index == self.proxy_index:	# 虽然超时，但是如果之前一直很好用的话，也不设为invalid
+					logging.info('exception occure when proxy connection but proxy_index_count > invalid_proxy_threshold, inc proxy index')
 					self.inc_proxy_index()
 			else:	# 简单的切换而不禁用
 				if request_proxy_index == self.proxy_index:
+					logging.info('exception occure when proxy connection, inc proxy index')
 					self.inc_proxy_index()
 			new_request = request.copy()
 			new_request.dont_filter = True

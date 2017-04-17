@@ -50,7 +50,7 @@ class XueqiuSpider(scrapy.Spider):
 		# 	request.meta['i'] = str(i)
 		# 	yield request
 
-		for i in range(5, 0, -1):
+		for i in range(1000, 0, -1):
 
 			shRequest = FormRequest("https://xueqiu.com/v4/stock/quote.json?code=SH000001&_={0}".format(i),
 				dont_filter=True,

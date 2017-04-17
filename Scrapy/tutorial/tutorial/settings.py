@@ -17,9 +17,8 @@ DEFAULT_REQUEST_HEADERS = {
 	# 'Referer': "http://www.xingshulin.com/searchTest.html"
 }
 ITEM_PIPELINES = {
-   # 'tutorial.pipelines.TutorialPipeline': 300,
+   'tutorial.pipelines.TutorialPipeline': 300
 }
-
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
@@ -30,7 +29,7 @@ ITEM_PIPELINES = {
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY=3
+DOWNLOAD_DELAY=1
 ## DOWNLOAD_TIMEOUT=10
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN=16
@@ -63,7 +62,14 @@ XUEQIU_COOKIES = {
 	'Hm_lvt_1db88642e346389874251b5a1eded6e3': '1492061072,1492062559,1492070685,1492071572',
 	'Hm_lpvt_1db88642e346389874251b5a1eded6e3': '1492072769'
 }
+DXY_COOKIES = {
+	"DXY_USER_GROUP": "78",
+	"JUTE_SESSION_ID": "4ea06fad-c0b0-4587-a402-7e4f6ed1c766"
 
+	# "CMSSESSIONID": "35C2D65832F32B31E111DD565F8834C8-n1",
+	# "DRUGSSESSIONID": "3C8D74F425C1AA684186EDEDE962B290-n1",
+	# "JUTE_BBS_DATA": "4cd5fb2f746476144425a1445d16878b17dcd03e57097155baca6029379042419df30a23e856b408f42057bdd7d6ff8c454d0311029f5703f4542debc65973b3012ee04393fb8889f0008ea330829f1f"
+}
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED=False
 
@@ -82,7 +88,7 @@ XUEQIU_COOKIES = {
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'tutorial.middlewares.HttpProxyMiddleware': 543,
+   # 'tutorial.middlewares.HttpProxyMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -94,7 +100,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    'tutorial.pipelines.SomePipeline': 300,
+   # 'tutorial.pipelines.SomePipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

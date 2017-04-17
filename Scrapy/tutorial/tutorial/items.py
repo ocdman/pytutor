@@ -256,4 +256,18 @@ class WanfangExaminationItem(scrapy.Item):
 	Author = scrapy.Field()
 	Checker = scrapy.Field()
 		
+class DxyDocumentItem(scrapy.Item):
+	id = scrapy.Field()
+	name = scrapy.Field()
+	downloadUrl = scrapy.Field()
+	uploadTime = scrapy.Field()
+	description = scrapy.Field()
+	sourceType = scrapy.Field()
+	user = scrapy.Field()
+	size = scrapy.Field()
+	classification = scrapy.Field()
+	byteContent = scrapy.Field()
 
+class DxyDownloadPdfItem(scrapy.Item):
+	file_urls = scrapy.Field()
+	files = scrapy.Field()
